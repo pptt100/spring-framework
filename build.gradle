@@ -294,10 +294,15 @@ configure(allprojects) { project ->
 			maven { url "https://repo.spring.io/libs-spring-framework-build" }
 		}
 	}
-	configurations.all {
+	/*configurations.all {
 		resolutionStrategy {
 			cacheChangingModulesFor 0, "seconds"
 			cacheDynamicVersionsFor 0, "seconds"
+		}
+	}*/
+	allprojects {
+		repositories {
+			maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 		}
 	}
 }
@@ -425,3 +430,4 @@ configure(rootProject) {
 		}
 	}
 }
+
